@@ -1,0 +1,30 @@
+<div class="col-12-of-12">
+                    <!-- artikel terkait -->
+                           <div class="perSelect">
+                            <div class="title_panel">
+                                <span><h4>Film Popular Lainnya</h4></span>
+                                <div class="before_panel"></div>
+                            </div>
+                                <!-- Products -->
+                            <ul class="products">
+                                <?php 
+                                    // for ($i=0; $i < 8; $i++) { 
+                                    foreach ($terpopular as $dataAT) {
+                                    // if ($singleData[0]['id_post'] == $dataAT->id_post ) {
+                                    //     continue;
+                                    // }
+                                ?>
+                                <li class="product first" id="bgfilm-releted-post" itemscope itemtype="https://schema.org/Movie">
+                                    <a itemprop="contentUrl" href="<?= base_url('v/').$dataAT->slug; ?>/" title="<?= $dataAT->title; ?>">
+                                        <img itemprop="image" src="<?= base_url() ?>image/<?= $dataAT->image; ?>" alt="<?= $dataAT->title; ?>">
+                                        <h3 itemprop="name"><?= $dataAT->title; ?></h3>
+                                        <span class="screen-reader" itemprop="description"><?= 
+substr(strip_tags($dataAT->description),0,50); ?></span>
+                                    </a>
+                                </li>
+                                <?php } ?>                            
+
+                            </ul>   
+                        </div>
+                    <!-- Stop artikel terkait -->
+                </div>
